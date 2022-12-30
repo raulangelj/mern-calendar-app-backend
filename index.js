@@ -8,11 +8,9 @@ const app = express();
 app.use(express.static("public"));
 
 // create express router
-// app.get("/", (req, res) => {
-//   res.json({
-//     ok: true,
-//   });
-// });
+app.use("/api/auth", require("./routes/auth"));
+// TODO CRUD: EVENTS
+
 
 // listen to port
 app.listen(process.env.PORT, () => {
