@@ -20,7 +20,7 @@ app.use(express.json());
 
 // create express router
 app.use("/api/auth", require("./routes/auth"));
-// TODO CRUD: EVENTS
+app.use("/api/events", require("./routes/events"));
 
 // listen to port
 app.listen(process.env.PORT, () => {
