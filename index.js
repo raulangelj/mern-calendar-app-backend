@@ -17,9 +17,6 @@ app.use(express.static("public"));
 
 // read and parse body
 app.use(express.json());
-app.get('/', (req, res) => {
-  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-});
 
 // create express router
 app.use("/api/auth", require("./routes/auth"));
