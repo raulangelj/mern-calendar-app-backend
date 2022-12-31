@@ -5,10 +5,11 @@ const EventModel = require("../models/EventModel");
  * Get events
  */
 const getEvents = async (req, res = response) => {
-  console.log(req.body);
+  const events = await EventModel.find().populate("user", "name");
+
   res.json({
     success: true,
-    msg: "getEvents",
+    events,
   });
 };
 
