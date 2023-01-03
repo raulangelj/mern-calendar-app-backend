@@ -98,6 +98,8 @@ const refresToken = async (req, res = response) => {
 
   res.json({
     success: true,
+    uid,
+    name,
     token,
   });
 };
