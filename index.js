@@ -14,7 +14,7 @@ dbConnection();
 app.use(cors());
 
 // Public dir
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(__dirname + "/public"));
 
 // read and parse body
 app.use(express.json());
