@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 const { dbConnection } = require("./database/config");
 
@@ -13,7 +14,7 @@ dbConnection();
 app.use(cors());
 
 // Public dir
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // read and parse body
 app.use(express.json());
@@ -21,6 +22,10 @@ app.use(express.json());
 // create express router
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 // listen to port
 app.listen(process.env.PORT, () => {
