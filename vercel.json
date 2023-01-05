@@ -10,15 +10,5 @@
       "use": "@now/static"
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "public/index.html"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "index.js"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
