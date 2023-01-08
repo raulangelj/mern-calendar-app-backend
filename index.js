@@ -14,7 +14,7 @@ dbConnection();
 app.use(cors());
 
 // Public dir
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // read and parse body
 app.use(express.json());
@@ -23,8 +23,8 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 // listen to port
