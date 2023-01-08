@@ -4,7 +4,6 @@ const path = require("path");
 require("dotenv").config();
 const { dbConnection } = require("./database/config");
 
-
 // create express server
 const app = express();
 
